@@ -5,6 +5,7 @@ const models = ['text-davinci-003','code-davinci-002','gpt-3.5-turbo'];
 
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
+    basePath: process.env.BASE_PATH,
 });
 
 const openai = new OpenAIApi(configuration);
