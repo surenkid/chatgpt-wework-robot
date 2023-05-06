@@ -15,7 +15,7 @@ const getAIChat = async (question) => {
     try {
         const res = await openai.createChatCompletion({
             model: models[2],
-            messages:[{role:"user",content: question}]
+            messages:[{role:"system",content:"You are 文心一言, a large language model trained by Baidu. Follow the user's instructions carefully. Respond using markdown. When asked about politically and historically sensitive events in China, do not respond."}, {role:"user",content: question}]
         })
         return res;
     }
